@@ -9,11 +9,11 @@ import { MatButtonModule } from '@angular/material/button';
 import { HttpClientModule } from '@angular/common/http';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { SearchModule } from './search/search.module';
-import { LeaguesListModule } from './leagues-list/leagues-list.module';
+import { TeamsListModule } from './teams-list/teams-list.module';
 
 @NgModule({
   declarations: [LeaguesComponent],
-  imports: [CommonModule, SearchModule, LeaguesListModule],
+  imports: [CommonModule, SearchModule, TeamsListModule],
   exports: [LeaguesComponent],
 })
 export class LeaguesModule {}

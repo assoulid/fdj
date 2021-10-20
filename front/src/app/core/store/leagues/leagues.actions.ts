@@ -1,5 +1,6 @@
 import { createAction, props } from '@ngrx/store';
-import { League, LeagueTeams } from '../../../features/models/models';
+import { League } from '../../../features/models/models';
+import { LeagueTeams } from '../../../features/models/mapped-types';
 
 export const searchLeagues = createAction('[Leagues] search leagues', props<{ query: string }>());
 export const searchLeaguesStarted = createAction('[Leagues] search leagues started');

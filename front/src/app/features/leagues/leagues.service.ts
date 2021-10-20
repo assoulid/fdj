@@ -3,8 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { ENVIRONMENT } from '../../../environments/environment.module';
 import { Environment } from '../../../environments/environment.model';
 import { Observable } from 'rxjs';
-import { League, LeagueTeams } from '../models/models';
+import { League } from '../models/models';
 import * as URI from 'urijs';
+import { LeagueTeams } from '../models/mapped-types';
 
 @Injectable({
   providedIn: 'root',

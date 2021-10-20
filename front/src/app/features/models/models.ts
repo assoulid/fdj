@@ -25,8 +25,3 @@ export interface Signin {
   amount: number;
   currency: string;
 }
-
-export interface LeagueTeams {
-  _id: string;
-  leagueTeams: Team[];
-}
