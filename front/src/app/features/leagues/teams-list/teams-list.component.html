@@ -4,14 +4,18 @@
 
   <div *ngIf="teams.data && !teams.loading && !teams.error">
     <div class="row">
-      <ng-container *ngFor="let team of teams.data.leagueTeams; let index = index">
-        <div class="col-6 text-center">
-          <div>
-            <img [src]="team.thumbnail" [alt]="team.name" />
+      <ng-container *ngIf="teams.data.leagueTeams.length > 0; else noTeam">
+        <ng-container *ngFor="let team of teams.data.leagueTeams; let index = index">
+          <div class="col-6 text-center" [routerLink]="'/teams/' + team.id + '/players'">
+            <div>
+              <img [src]="team.thumbnail" [alt]="team.name" />
+            </div>
           </div>
-        </div>
-        <div class="w-100 mb-3" *ngIf="(index + 1) % 2 === 0"></div>
+          <div class="w-100 mb-3" *ngIf="(index + 1) % 2 === 0"></div>
+        </ng-container>
       </ng-container>
+
+      <ng-template #noTeam><span></span></ng-template>
     </div>
   </div>
 </ng-container>
