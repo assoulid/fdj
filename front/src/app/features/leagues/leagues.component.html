@@ -4,4 +4,11 @@
   (getLeagueTeamsEvent)="getLeagueTeams($event)"
 ></app-search>
 
-<app-teams-list [teams]="leaguesFacadeService.teamsState$ | async"></app-teams-list>
+<ng-container *ngIf="leaguesFacadeService.teamsState$ | async as teamState">
+  <div *ngIf="teamState.loading"><mat-spinner></mat-spinner></div>
+  <div *ngIf="teamState.error">An error occurred</div>
+
+  <ng-container *ngIf="teamState.data && !teamState.loading && !teamState.error">
+    <app-teams-list [teams]="leaguesFacadeService.teams$ | async"></app-teams-list>
+  </ng-container>
+</ng-container>

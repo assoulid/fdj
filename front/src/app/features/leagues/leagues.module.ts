@@ -10,10 +10,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { SearchModule } from './search/search.module';
 import { TeamsListModule } from './teams-list/teams-list.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [LeaguesComponent],
-  imports: [CommonModule, SearchModule, TeamsListModule],
+  imports: [CommonModule, SearchModule, TeamsListModule, MatProgressSpinnerModule],
   exports: [LeaguesComponent],
 })
 export class LeaguesModule {}

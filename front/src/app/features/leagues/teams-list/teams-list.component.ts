@@ -1,5 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { LeagueTeamsState } from '../../../core/store/leagues/leagues.reducer';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { LeagueTeamsType } from '../../models/mapped-types';
 
 @Component({
   selector: 'app-teams-list',
@@ -13,10 +13,8 @@ import { LeagueTeamsState } from '../../../core/store/leagues/leagues.reducer';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class TeamsListComponent implements OnInit {
-  @Input() teams: LeagueTeamsState | null;
+export class TeamsListComponent {
+  @Input() teams: LeagueTeamsType | null;
 
   constructor() {}
-
-  ngOnInit(): void {}
 }

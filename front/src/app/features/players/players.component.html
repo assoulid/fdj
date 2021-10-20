@@ -1,1 +1,20 @@
-<app-players-list [players]="playersFacadeService.teamPlayersState$ | async"></app-players-list>
+<ng-container *ngIf="playersFacadeService.teamPlayersState$ | async as teamPlayersState">
+  <div class="row my-2">
+    <div class="col-2">
+      <button mat-raised-button color="primary" class="col-2" routerLink="/"><fa-icon [icon]="faChevronLeft"></fa-icon>Back</button>
+    </div>
+    <span
+      class="col-10 name align-center text-center"
+      *ngIf="teamPlayersState.data && !teamPlayersState.loading && !teamPlayersState.error"
+    >
+      {{ teamPlayersState.data.name }}
+    </span>
+  </div>
+
+  <div *ngIf="teamPlayersState.loading"><mat-spinner></mat-spinner></div>
+  <div *ngIf="teamPlayersState.error">An error occurred</div>
+
+  <ng-container *ngIf="teamPlayersState.data && !teamPlayersState.loading && !teamPlayersState.error">
+    <app-players-list [players]="playersFacadeService.teamPlayers$ | async"></app-players-list>
+  </ng-container>
+</ng-container>

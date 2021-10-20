@@ -1,6 +1,5 @@
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
-import { TeamPlayersState } from '../../../core/store/players/players.reducer';
-import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { TeamPlayersType } from '../../models/mapped-types';
 
 @Component({
   selector: 'app-players-list',
@@ -20,12 +19,8 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
   ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PlayersListComponent implements OnInit {
-  faChevronLeft = faChevronLeft;
-
-  @Input() players: TeamPlayersState | null;
+export class PlayersListComponent {
+  @Input() players: TeamPlayersType | null;
 
   constructor() {}
-
-  ngOnInit(): void {}
 }
