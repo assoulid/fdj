@@ -1,7 +1,8 @@
 import { Loadable } from '../../../shared/loadable/loadable';
-import { League, LeagueTeams } from '../../../features/models/models';
+import { League } from '../../../features/models/models';
 import { createReducer, on } from '@ngrx/store';
 import { LeaguesActions } from './index';
+import { LeagueTeams } from '../../../features/models/mapped-types';
 
 export const leaguesFeatureKey = 'leagues';
 export const leagueTeamsFeatureKey = 'leagueTeams';
