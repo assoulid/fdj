@@ -1,44 +1,30 @@
 <ng-container *ngIf="players">
-  <div class="row my-2">
-    <div class="col-2">
-      <button mat-raised-button color="primary" class="col-2" routerLink="/"><fa-icon [icon]="faChevronLeft"></fa-icon>Back</button>
-    </div>
-    <span class="col-10 name align-center text-center" *ngIf="players.data && !players.loading && !players.error">
-      {{ players.data.name }}
-    </span>
-  </div>
+  <ng-container *ngIf="players.length > 0; else noPlayer">
+    <div class="row mb-2 p-2 player-row" *ngFor="let player of players">
+      <div class="col-4">
+        <img [src]="player.thumbnail" [alt]="player.name" />
+      </div>
 
-  <div *ngIf="players.loading"><mat-spinner></mat-spinner></div>
-  <div *ngIf="players.error">An error occured</div>
-
-  <div *ngIf="players.data && !players.loading && !players.error">
-    <ng-container *ngIf="players.data.teamPlayers.length > 0; else noPlayer">
-      <div class="row mb-2 p-2 player-row" *ngFor="let player of players.data.teamPlayers">
-        <div class="col-4">
-          <img [src]="player.thumbnail" [alt]="player.name" />
-        </div>
-
-        <div class="col-8">
-          <div>
-            <div class="row name">
-              {{ player.name }}
-            </div>
-            <div class="row">
-              {{ player.position }}
-            </div>
-            <div class="row">birthDate: {{ player.born | date: 'YYYY-MM-dd' }}</div>
-            <div class="row">
-              price:
-              <ng-container *ngIf="player.signin.amount; else free">
-                {{ player.signin.amount | currency: (player.signin.currency | uppercase) }}
-              </ng-container>
-              <ng-template #free><span>Free</span></ng-template>
-            </div>
+      <div class="col-8">
+        <div>
+          <div class="row name">
+            {{ player.name }}
+          </div>
+          <div class="row">
+            {{ player.position }}
+          </div>
+          <div class="row">birthDate: {{ player.born | date: 'YYYY-MM-dd' }}</div>
+          <div class="row">
+            price:
+            <ng-container *ngIf="player.signin.amount; else free">
+              {{ player.signin.amount | currency: (player.signin.currency | uppercase) }}
+            </ng-container>
+            <ng-template #free><span>Free</span></ng-template>
           </div>
         </div>
       </div>
-    </ng-container>
+    </div>
+  </ng-container>
 
-    <ng-template #noPlayer><span></span></ng-template>
-  </div>
+  <ng-template #noPlayer><span></span></ng-template>
 </ng-container>

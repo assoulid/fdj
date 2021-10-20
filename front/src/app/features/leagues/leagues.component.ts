@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { LeaguesFacadeService } from '../../core/store/leagues/leagues-facade.service';
 
 @Component({
@@ -7,10 +7,8 @@ import { LeaguesFacadeService } from '../../core/store/leagues/leagues-facade.se
   styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class LeaguesComponent implements OnInit {
+export class LeaguesComponent {
   constructor(public leaguesFacadeService: LeaguesFacadeService) {}
-
-  ngOnInit(): void {}
 
   searchLeagues(query: string): void {
     this.leaguesFacadeService.searchLeagues(query);

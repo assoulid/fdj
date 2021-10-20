@@ -1,21 +1,16 @@
 <ng-container *ngIf="teams">
-  <div *ngIf="teams.loading"><mat-spinner></mat-spinner></div>
-  <div *ngIf="teams.error">An error occured</div>
-
-  <div *ngIf="teams.data && !teams.loading && !teams.error">
-    <div class="row">
-      <ng-container *ngIf="teams.data.leagueTeams.length > 0; else noTeam">
-        <ng-container *ngFor="let team of teams.data.leagueTeams; let index = index">
-          <div class="col-6 text-center" [routerLink]="'/teams/' + team.id + '/players'">
-            <div>
-              <img [src]="team.thumbnail" [alt]="team.name" />
-            </div>
+  <div class="row">
+    <ng-container *ngIf="teams.length > 0; else noTeam">
+      <ng-container *ngFor="let team of teams; let index = index">
+        <div class="col-6 text-center" [routerLink]="'/teams/' + team.id + '/players'">
+          <div>
+            <img [src]="team.thumbnail" [alt]="team.name" />
           </div>
-          <div class="w-100 mb-3" *ngIf="(index + 1) % 2 === 0"></div>
-        </ng-container>
+        </div>
+        <div class="w-100 mb-3" *ngIf="(index + 1) % 2 === 0"></div>
       </ng-container>
+    </ng-container>
 
-      <ng-template #noTeam><span></span></ng-template>
-    </div>
+    <ng-template #noTeam><span></span></ng-template>
   </div>
 </ng-container>

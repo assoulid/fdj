@@ -1,14 +1,21 @@
-import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 import { PlayersFacadeService } from '../../core/store/players/players-facade.service';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-players',
   templateUrl: './players.component.html',
-  styles: [],
+  styles: [
+    `
+      .name {
+        font-weight: bold;
+      }
+    `,
+  ],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PlayersComponent implements OnInit {
-  constructor(public playersFacadeService: PlayersFacadeService) {}
+export class PlayersComponent {
+  faChevronLeft = faChevronLeft;
 
-  ngOnInit(): void {}
+  constructor(public playersFacadeService: PlayersFacadeService) {}
 }
