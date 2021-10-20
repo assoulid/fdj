@@ -4,6 +4,8 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve -o --proxy-config proxy.conf.json",
+    "start:mock": "concurrently --kill-others \"npm run mock:server\" \"ng serve -o --proxy-config mock-proxy.conf.json\"",
+    "mock:server": "json-server --port 3000 --watch modk-data/db.json --routes modk-data/routes.json --delay 1000",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -28,6 +30,8 @@
     "@ngrx/effects": "^12.5.0",
     "@ngrx/store": "^12.5.0",
     "bootstrap": "^5.1.3",
+    "concurrently": "^6.3.0",
+    "json-server": "^0.17.0",
     "ngrx": "0.0.1-security",
     "prettier": "^2.4.1",
     "rxjs": "~6.6.0",
