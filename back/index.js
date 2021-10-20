@@ -67,6 +67,7 @@ app.get("/api/leagues/:id/teams", async (req, res) => {
           {
             $match: {
               _id: new ObjectId(id),
+              // teams: { $exists: true, $not: { $size: 0 } }, // works in Studio 3T but not here...
             },
           },
           { $unwind: { path: "$teams", preserveNullAndEmptyArrays: true } },
@@ -86,6 +87,7 @@ app.get("/api/leagues/:id/teams", async (req, res) => {
               _id: "$_id",
               leagueTeams: {
                 $push: {
+                  id: "$leagueTeams._id",
                   name: "$leagueTeams.name",
                   thumbnail: "$leagueTeams.thumbnail",
                 },
@@ -135,6 +137,7 @@ app.get("/api/teams/:id/players", async (req, res) => {
           {
             $match: {
               _id: new ObjectId(id),
+              // players: { $exists: true, $not: { $size: 0 } }, // works in Studio 3T but not here...
             },
           },
           { $unwind: { path: "$players", preserveNullAndEmptyArrays: true } },
@@ -152,6 +155,7 @@ app.get("/api/teams/:id/players", async (req, res) => {
           {
             $group: {
               _id: "$_id",
+              name: { $first: "$name" },
               teamPlayers: {
                 $push: {
                   name: "$teamPlayers.name",

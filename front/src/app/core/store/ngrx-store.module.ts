@@ -3,6 +3,7 @@ import { LeaguesStateModule } from './leagues/leagues-state.module';
 import { ActionReducer, StoreModule } from '@ngrx/store';
 import { environment } from '../../../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
+import { PlayersStateModule } from './players/players-state.module';
 
 export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
   return (state, action) => {
@@ -23,6 +24,7 @@ export const metaReducersFactory = (production: boolean) => (!production ? [debu
     StoreModule.forRoot({}, { metaReducers: metaReducersFactory(environment.production) }),
     EffectsModule.forRoot([]),
     LeaguesStateModule,
+    PlayersStateModule,
   ],
 })
 export class NgrxStoreModule {}

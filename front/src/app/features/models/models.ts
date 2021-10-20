@@ -1,12 +1,12 @@
 export interface League {
-  _id: number;
+  _id: string;
   name: string;
   sport: string;
   teams: Team[];
 }
 
 export interface Team {
-  id: number;
+  id: string;
   name: string;
   thumbnail: string;
   players: Player[];
