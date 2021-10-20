@@ -1,0 +1,7 @@
+<app-search
+  [leagues]="leaguesFacadeService.leaguesState$ | async"
+  (searchLeagues)="searchLeagues($event)"
+  (getLeagueTeamsEvent)="getLeagueTeams($event)"
+></app-search>
+
+<app-leagues-list [teams]="leaguesFacadeService.teamsState$ | async"></app-leagues-list>

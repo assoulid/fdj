@@ -1,0 +1,17 @@
+<form [formGroup]="searchForm">
+  <mat-form-field class="w-100">
+    <input matInput placeholder="Search" aria-label="League" [matAutocomplete]="auto" formControlName="query" />
+    <span matSuffix><mat-icon>search</mat-icon></span>
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="getName.bind(this)" (optionSelected)="getLeagueTeams($event.option.value)">
+      <span *ngIf="leagues?.loading"><mat-spinner></mat-spinner></span>
+
+      <ng-container *ngIf="leagues?.data && !leagues?.loading && !leagues?.error">
+        <mat-option *ngFor="let league of leagues?.data" [value]="league._id">
+          <span>{{ league.name }}</span>
+        </mat-option>
+      </ng-container>
+    </mat-autocomplete>
+  </mat-form-field>
+
+  <div *ngIf="leagues?.error">An error occured</div>
+</form>
