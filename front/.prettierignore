@@ -1,0 +1,9 @@
+/*
+!/e2e
+!/projects
+!/src
+!/mock-data
+assets/
+browserslist
+package*.json
+*.ico

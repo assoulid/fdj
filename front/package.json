@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve -o --proxy-config proxy.conf.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -18,8 +18,12 @@
     "@angular/platform-browser": "~12.2.0",
     "@angular/platform-browser-dynamic": "~12.2.0",
     "@angular/router": "~12.2.0",
+    "@ngrx/effects": "^12.5.0",
+    "ngrx": "0.0.1-security",
+    "prettier": "^2.4.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
+    "urijs": "^1.19.7",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {
