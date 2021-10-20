@@ -1,0 +1,5 @@
+{
+  "/leagues/filter/:query": "/leagues",
+  "leagues/:id:teams": "/teams",
+  "teams/:id/players": "/players"
+}
