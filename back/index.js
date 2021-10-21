@@ -55,7 +55,7 @@ function server() {
    *
    * @apiParam {String} id Id of the league.
    *
-   * @apiSuccess {String} id                    Id of the League.
+   * @apiSuccess {String} _id                    Id of the League.
    * @apiSuccess {Object[]} leagueTeams         Teams of the League.
    * @apiSuccess {String} leagueTeams.name      Name of the Team.
    * @apiSuccess {String} leagueTeams.thumbnail Thumbnail of the Team.
@@ -117,13 +117,13 @@ function server() {
   });
 
   /**
-   * @api {get} /leagues/:id/teams Fetch Players of a Team
+   * @api {get} /teams/:id/players Fetch Players of a Team
    * @apiName Fetch Players
    * @apiGroup Teams
    *
    * @apiParam {String} id Id of the Team.
    *
-   * @apiSuccess {String} id                             Id of the Team.
+   * @apiSuccess {String} _id                            Id of the Team.
    * @apiSuccess {Object[]} teamPlayers                  Teams of the Team.
    * @apiSuccess {String} teamPlayers.name               Name of the Player.
    * @apiSuccess {String} teamPlayers.position           Position of the Player.
