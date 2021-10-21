@@ -12,12 +12,7 @@ npm run start:mock
 ```
 
 ### Launch application with node js server
-1. Launch server (one instance of server)
-```
-cd back
-node index.js
-```
-Or you can launch several instances of server
+1. Launch server (several instances of server)
 ```
 cd back
 node cluster.js
