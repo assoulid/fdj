@@ -2,7 +2,7 @@
   <div class="row">
     <ng-container *ngIf="teams.length > 0; else noTeam">
       <ng-container *ngFor="let team of teams; let index = index">
-        <div class="col-6 text-center" [routerLink]="'/teams/' + team.id + '/players'">
+        <div class="col-6 text-center" [routerLink]="'/teams/' + team._id + '/players'">
           <div>
             <img [src]="team.thumbnail" [alt]="team.name" />
           </div>
@@ -11,6 +11,6 @@
       </ng-container>
     </ng-container>
 
-    <ng-template #noTeam><span></span></ng-template>
+    <ng-template #noTeam><span id="no-team">No team found</span></ng-template>
   </div>
 </ng-container>
