@@ -2,19 +2,16 @@ function server() {
   const express = require("express");
   const { ObjectId } = require("mongodb");
   const app = express();
-  const dbConfig = require("./config");
+  const config = require("./config");
 
   const MongoClient = require("mongodb").MongoClient;
-  const dbName = dbConfig.development.database.db;
+  const dbName = config.development.database.db;
   let db;
 
-  MongoClient.connect(
-    dbConfig.development.database.host,
-    function (err, client) {
-      // console.log("Connected successfully to server");
-      db = client.db(dbName);
-    }
-  );
+  MongoClient.connect(config.development.database.host, function (err, client) {
+    // console.log("Connected successfully to server");
+    db = client.db(dbName);
+  });
 
   app.get("/", (req, res) => {
     res.send("Welcome");
@@ -192,8 +189,8 @@ function server() {
     }
   });
 
-  app.listen(8080, () => {
-    console.log("Server listening");
+  app.listen(config.development.server.port, () => {
+    console.log(`Server listening on port ${config.development.server.port}`);
   });
 }
 

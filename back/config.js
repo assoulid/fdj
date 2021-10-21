@@ -5,6 +5,9 @@ const config = {
       port: "27017",
       db: "data",
     },
+    server: {
+      port: "8080",
+    },
   },
 };
 
