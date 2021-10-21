@@ -1,13 +1,13 @@
 const express = require("express");
 const { ObjectId } = require("mongodb");
 const app = express();
+const dbConfig = require("./config");
 
 const MongoClient = require("mongodb").MongoClient;
-const url = "mongodb://localhost:27017";
-const dbName = "data";
+const dbName = dbConfig.development.database.db;
 let db;
 
-MongoClient.connect(url, function (err, client) {
+MongoClient.connect(dbConfig.development.database.host, function (err, client) {
   console.log("Connected successfully to server");
   db = client.db(dbName);
 });
@@ -87,7 +87,7 @@ app.get("/api/leagues/:id/teams", async (req, res) => {
               _id: "$_id",
               leagueTeams: {
                 $push: {
-                  id: "$leagueTeams._id",
+                  _id: "$leagueTeams._id",
                   name: "$leagueTeams.name",
                   thumbnail: "$leagueTeams.thumbnail",
                 },

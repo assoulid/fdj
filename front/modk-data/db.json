@@ -27,17 +27,17 @@
     "_id": "5d2cdcf7da07b95bb8f16ed1",
     "leagueTeams": [
       {
-        "id": "5d2d01fdda07b95bb8f16f0a",
+        "_id": "5d2d01fdda07b95bb8f16f0a",
         "name": "Arsenal",
         "thumbnail": "https://www.thesportsdb.com//images//media//team//badge//a1af2i1557005128.png"
       },
       {
-        "id": "5d2d02d7da07b95bb8f16f2a",
+        "_id": "5d2d02d7da07b95bb8f16f2a",
         "name": "Manchester City",
         "thumbnail": "https://www.thesportsdb.com/images/media/team/badge/vwpvry1467462651.png"
       },
       {
-        "id": "5d2d8f60da07b95bb8f17170",
+        "_id": "5d2d8f60da07b95bb8f17170",
         "name": "Chelsea",
         "thumbnail": "https://www.thesportsdb.com/images/media/team/badge/yvwvtu1448813215.png"
       }
