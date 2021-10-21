@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve -o --proxy-config proxy.conf.json",
     "start:mock": "concurrently --kill-others \"npm run mock:server\" \"ng serve -o --proxy-config mock-proxy.conf.json\"",
-    "mock:server": "json-server --port 3000 --watch modk-data/db.json --routes modk-data/routes.json --delay 1000",
+    "mock:server": "json-server --port 3000 --watch modk-data/db.json --routes modk-data/routes.json --delay 10000",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"

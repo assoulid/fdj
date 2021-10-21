@@ -8,7 +8,7 @@ export const teamPlayersFeatureKey = 'teamPlayers';
 export type TeamPlayersState = Loadable<TeamPlayers>;
 
 export const teamPlayersInitialState: TeamPlayersState = Loadable.initialState<TeamPlayers>({
-  id: '',
+  _id: '',
   name: '',
   teamPlayers: [],
 });

@@ -1,6 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { LeaguesComponent } from './leagues.component';
+import { LeaguesModule } from './leagues.module';
+import { provideMockStore } from '@ngrx/store/testing';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 describe('LeaguesComponent', () => {
   let component: LeaguesComponent;
@@ -8,9 +11,10 @@ describe('LeaguesComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ LeaguesComponent ]
-    })
-    .compileComponents();
+      declarations: [LeaguesComponent],
+      imports: [LeaguesModule, BrowserAnimationsModule],
+      providers: [provideMockStore()],
+    }).compileComponents();
   });
 
   beforeEach(() => {
