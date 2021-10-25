@@ -11,6 +11,7 @@ import { EnvironmentModule } from '../environments/environment.module';
 import { PlayersModule } from './features/players/players.module';
 import { PlayersResolver } from './features/players/players.resolver';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { PageNotFoundModule } from './features/page-not-found/page-not-found.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -24,6 +25,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     EnvironmentModule,
     PlayersModule,
     FontAwesomeModule,
+    PageNotFoundModule,
   ],
   providers: [PlayersResolver],
   bootstrap: [AppComponent],
