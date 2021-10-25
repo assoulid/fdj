@@ -3,6 +3,7 @@ import { LeaguesComponent } from './features/leagues/leagues.component';
 import { NgModule } from '@angular/core';
 import { PlayersComponent } from './features/players/players.component';
 import { PlayersResolver } from './features/players/players.resolver';
+import { PageNotFoundComponent } from './features/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,8 @@ const routes: Routes = [
       initialisation: PlayersResolver,
     },
   },
+  { path: '404', component: PageNotFoundComponent },
+  { path: '**', redirectTo: '/404' },
 ];
 
 @NgModule({
