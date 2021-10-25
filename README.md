@@ -25,7 +25,9 @@ npm run start
 ```
 
 ### Generate API documentation
-This will generate the document in the foler `back/doc`. Open `index.html` with your favorite browser.
+The API documentation can be found [here](https://github.com/assoulid/fdj/tree/master/back/doc).
+
+You can also generate it in the folder `back/doc`. Open `index.html` with your favorite browser.
 ```
 cd back
 apidoc -i . -o doc/
