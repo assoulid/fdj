@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { PlayersComponent } from './features/players/players.component';
 import { PlayersResolver } from './features/players/players.resolver';
 import { PageNotFoundComponent } from './features/page-not-found/page-not-found.component';
+import { AddLeagueComponent } from './features/add-league/add-league.component';
 
 const routes: Routes = [
   {
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: 'leagues',
     component: LeaguesComponent,
+  },
+  {
+    path: 'leagues/add',
+    component: AddLeagueComponent,
   },
   {
     path: 'teams/:id/players',

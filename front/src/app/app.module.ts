@@ -6,12 +6,14 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { LeaguesModule } from './features/leagues/leagues.module';
-import { NgrxStoreModule } from './core/store/ngrx-store.module';
 import { EnvironmentModule } from '../environments/environment.module';
 import { PlayersModule } from './features/players/players.module';
 import { PlayersResolver } from './features/players/players.resolver';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { PageNotFoundModule } from './features/page-not-found/page-not-found.module';
+import { CoreModule } from './core/core.module';
+import { NgxSpinnerModule } from 'ngx-spinner';
+import { AddLeagueModule } from './features/add-league/add-league.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -21,11 +23,13 @@ import { PageNotFoundModule } from './features/page-not-found/page-not-found.mod
     BrowserAnimationsModule,
     AppRoutingModule,
     LeaguesModule,
-    NgrxStoreModule,
+    CoreModule,
     EnvironmentModule,
     PlayersModule,
     FontAwesomeModule,
     PageNotFoundModule,
+    NgxSpinnerModule,
+    AddLeagueModule,
   ],
   providers: [PlayersResolver],
   bootstrap: [AppComponent],

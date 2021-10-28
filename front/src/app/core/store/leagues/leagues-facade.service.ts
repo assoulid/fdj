@@ -21,4 +21,8 @@ export class LeaguesFacadeService {
   getLeagueTeams(id: string): void {
     this.store.dispatch(LeaguesActions.getLeagueTeams({ id }));
   }
+
+  addLeague(name: string): void {
+    this.store.dispatch(LeaguesActions.addLeague({ name }));
+  }
 }
