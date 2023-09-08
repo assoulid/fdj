@@ -1,0 +1,9 @@
+<ng-container [formGroup]="playerForm">
+  <div class="row col-md-4">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+      <mat-error *ngIf="playerForm.get('player')?.invalid">Please enter a name</mat-error>
+    </mat-form-field>
+  </div>
+</ng-container>

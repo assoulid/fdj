@@ -14,6 +14,7 @@ import { PageNotFoundModule } from './features/page-not-found/page-not-found.mod
 import { CoreModule } from './core/core.module';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { AddLeagueModule } from './features/add-league/add-league.module';
+import { AddTeamModule } from './features/add-team/add-team.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -30,6 +31,7 @@ import { AddLeagueModule } from './features/add-league/add-league.module';
     PageNotFoundModule,
     NgxSpinnerModule,
     AddLeagueModule,
+    AddTeamModule,
   ],
   providers: [PlayersResolver],
   bootstrap: [AppComponent],

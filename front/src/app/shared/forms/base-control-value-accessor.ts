@@ -36,7 +36,8 @@ export abstract class BaseControlValueAccessor implements ControlValueAccessor, 
   validate(control: AbstractControl): ValidationErrors | null {
     return this.getForm().valid || this.getForm().disabled
       ? null
-      : Boolean(this.getForm().errors) && Object.keys(this.getForm().errors).length
+      : // @ts-ignore
+      Boolean(this.getForm().errors) && Object.keys(this.getForm().errors).length
       ? this.getForm().errors
       : { valid: false };
   }

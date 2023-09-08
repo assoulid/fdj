@@ -5,6 +5,7 @@ import { PlayersComponent } from './features/players/players.component';
 import { PlayersResolver } from './features/players/players.resolver';
 import { PageNotFoundComponent } from './features/page-not-found/page-not-found.component';
 import { AddLeagueComponent } from './features/add-league/add-league.component';
+import { AddTeamComponent } from './features/add-team/add-team.component';
 
 const routes: Routes = [
   {
@@ -26,6 +27,10 @@ const routes: Routes = [
     resolve: {
       initialisation: PlayersResolver,
     },
+  },
+  {
+    path: 'teams/add',
+    component: AddTeamComponent,
   },
   { path: '404', component: PageNotFoundComponent },
   { path: '**', redirectTo: '/404' },

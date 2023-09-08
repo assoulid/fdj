@@ -10,7 +10,7 @@ export function debug(reducer: ActionReducer<any>): ActionReducer<any> {
     const { type, ...payload } = action;
     const nextState = reducer(state, action);
 
-    console.log('%cAction :', 'font-weight: bold', type);
+    console.log('%c Action :', 'font-weight: bold', type);
     console.log('%c payload :', 'color: blue; font-weight: bold', payload);
     console.log('%c prev state :', 'color: #9E9E9E; font-weight: bold', state);
     console.log('%c next state :', 'color: #4CAF50; font-weight: bold', nextState);

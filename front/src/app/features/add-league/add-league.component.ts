@@ -5,7 +5,6 @@ import { LeaguesFacadeService } from '../../core/store/leagues/leagues-facade.se
 @Component({
   selector: 'app-add-league',
   templateUrl: './add-league.component.html',
-  styles: [],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class AddLeagueComponent {

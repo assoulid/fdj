@@ -1,0 +1,24 @@
+<pre>{{teamForm.value|json}}</pre>
+
+<div [formGroup]="teamForm">
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+  </p>
+
+  <div class="row col-md-4 mt-1 mb-3">
+    <button mat-raised-button color="primary" (click)="add()">Add player</button>
+  </div>
+
+  <div formArrayName="players">
+    <ng-container *ngFor="let player of playersFormArray.controls; let i = index" [formGroupName]="i">
+      <app-add-player formControlName="player"></app-add-player>
+    </ng-container>
+  </div>
+
+  <div class="row col-md-4 mt-1">
+    <button mat-raised-button color="primary" [disabled]="!teamForm.valid">Add team</button>
+  </div>
+</div>
