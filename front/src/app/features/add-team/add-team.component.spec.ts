@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ReactiveFormsModule } from '@angular/forms';
 
 import { AddTeamComponent } from './add-team.component';
 
@@ -9,6 +10,7 @@ describe('AddTeamComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [AddTeamComponent],
+      imports: [ReactiveFormsModule],
     }).compileComponents();
   });
 
