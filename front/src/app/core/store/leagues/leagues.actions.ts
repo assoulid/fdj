@@ -11,3 +11,5 @@ export const getLeagueTeams = createAction('[Leagues] get league teams', props<{
 export const getLeagueTeamsStarted = createAction('[Leagues] get league teams started');
 export const getLeagueTeamsSuccess = createAction('[Leagues] get league teams success', props<{ teams: LeagueTeams }>());
 export const getLeagueTeamsError = createAction('[Leagues] get league teams error', props<{ error: Error }>());
+
+export const addLeague = createAction('[Leagues] add league', props<{ name: string }>());

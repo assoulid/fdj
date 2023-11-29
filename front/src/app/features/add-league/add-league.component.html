@@ -1,0 +1,9 @@
+<div [formGroup]="leagueForm">
+  <p>
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" />
+    </mat-form-field>
+  </p>
+  <button mat-raised-button color="primary" (click)="addLeague()" [disabled]="!leagueForm.valid">Add league</button>
+</div>
